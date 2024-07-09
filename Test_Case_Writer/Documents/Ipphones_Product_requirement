@@ -1,0 +1,272 @@
+### Product requirements
+    # Audio only devices
+        1]
+    # Video capable devices
+        2]
+  ## Kiosk Mode experience 
+     Microsoft Teams certified devices enforce kiosk mode, where the end user’s interaction with the device is limited to the Microsoft Teams user interface for all desired actions.  
+        1] The operating system configuration must prevent users from accessing hardware or other touch screen options or gestures (e.g., swipe left/right, up/down) to exit the Microsoft Teams, Microsoft Company Portal, or Device Settings applications.  
+        2] The operating system configuration must prevent users from exiting the Microsoft Teams, Microsoft Company Portal, or Device Settings applications by using keyboard or hard key combinations.  
+        3] The operating system configuration must launch the Microsoft Teams application after power up by default and prevent access to the Android home screen.  
+        4] Device must support an operating system configuration that would allow the user to navigate the phone only via the Microsoft Teams application user interface. 
+        5] Device must not allow users to uninstall the Microsoft Teams application via the Android interface. 
+        5] Device must not allow users to exist the Microsoft Teams application via any of the available touch screen gestures.  
+  ## OOBE requirements  
+       OOBE experience must meet all requirements as outlined in this section.  
+       # Boot up sequence  
+        Partners are responsible to ensure the following sequence and events are happening during initial boot up of the device.  
+         * Boot Up screen:  
+           1] Partners may display their logo on the boot up screen  
+           2] Partner must ensure all Microsoft Teams needed resources are initialized, including network and IP address acquisition  
+           3] Once initialization is complete, transition to next screen must happen without user intervention 
+          * Language Selection screen: 
+           1] Display list of supported languages (languages not supported by Microsoft Teams, see Microsoft Teams Supported Languages section below, must not be presented as an option) 
+           2] Users must be allowed to select a language. 
+           3} Once language selection is completed, transition to next screen must happen without user intervention. 
+           4] Device must fetch local time zone before signing in 
+         * Loading Teams Application screen:  
+           1] he next screen must be the Loading Teams Application screen without user intervention 
+       # Requirements for multiple service providers 
+         * OOBE Feature 1: Single Factory Image –  multiple service providers 
+         * Requirement : SHALL NOT
+         * Notes : The device shipping from factory shall not contain software from other service providers than Microsoft Teams. Must comply with branding guidelines for the    Certified  for Microsoft Teams.
+
+         * OOBE Feature 2: Single Disti orderable SKU  
+         * Requirement : REQUIRED 
+         * Notes : Required for mandatory Royalty tracking. 
+
+         * OOBE Feature 3: Customer orderable Teams SKU 
+         * Requirement : REQUIRED 
+         * Notes : Required for mandatory Royalty tracking.
+
+         * OOBE Feature 4: Device First-run Service picker  
+         * Requirement : SHALL NOT
+         * Notes : 
+
+         * OOBE Feature 5: Account OOBE customizations 
+         * Requirement : MAY
+         * Notes 5: OOBE customizations should be aligned with Teams OOBE and require sign-off by Microsoft Teams. 
+
+         * OOBE Feature 6: Teams Image –  Reset to certified defaults 
+         * Requirement : REQUIRED 
+         * Notes : Reset to default settings for Microsoft Teams shall not require user interaction
+
+         * OOBE Feature 7: Teams Image –  Reset to Factory Image  
+         * Requirement : MAY  
+         * Notes : The Reset to Factory Image shall use methods without UX on the device. 
+  ## Device encryption 
+       Devices must support Android-based encryption and must populate the right status for encryption using the appropriate Android API. 
+         1] Firmware must support Android-based device encryption (For Android 10 and above file-based encryption is required) File-Based Encryption  |  Android Open Source Project
+         2] Firmware must populate the right status for encryption using the appropriate Android API https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getStorageEncryptionStatus() 
+         3] The encryption is enforced through Intune policy and Intune queries for getStorageEncryptionStatus() for encryption status, return values of ENCRYPTION_STATUS_PER_USER (5) is recognized as active, fully configured encryption and satisfies Intune compliance 
+         4] Firmware must enable an admin to query the status of encryption.olson
+  ## TLS 1.2 and Cipher suites support 
+         Device must support TLS 1.2 and the Cipher Suites available at the time of certification. Partners to check with Microsoft on the most current list. 
+  ##  Android Intents support 
+        Device must support Android ‘intent’ inter-process communication mechanism.  Reference: https://developer.android.com/reference/android/content/Intent.html 
+  ## Idle Mode requirements 
+        1] For accurate presence information, the device needs to update user’s presence status to the Teams service. This will be achieved via broadcast intents that the firmware publishes to the Microsoft Teams application. 
+        2] Firmware must broadcast the ACTION_DREAMING_STARTED and ACTION_DREAMING_STOPPED intents when the device goes to idle mode either based on screen saver settings, device lock settings or office hour settings. 
+        3] When both the screen saver and device lock features are disabled by the user, the device must default to sending these events after a configurable idle timeout. 
+        4] When both the screen saver and device lock features are enabled, the device must enter idle mode based on the idle timeout setting that starts earliest. 
+  ## LED requirements 
+        The Microsoft Teams application would provide updates via intents to the firmware when users interact on the touch screen interface during calls or meetings. This enables the firmware to update the available LED states on the phone. If multiple LED indicators are not available on the device to differentiate the various states listed below, the Mute state would take precedence over other states.  
+        # LED Scenario 1 : Mute State: When user updates the mute state via the user interface, the Teams application will broadcast an intent. 
+        # Action : com.microsoft.skype.teams.ipphone.APP_MUTE_STATE Data: MUTE_STATE, 0 or 1 Where 0 represent Mute Off and 1 represents Mute On.This data can be used to update the mute LED.
+        # LED Scenario 2: MWI: When the user has a new voicemail, the application will broadcast an intent. 
+        # Action : com.microsoft.skype.teams.ipphone.APP_MISSEDVOICEMAIL_STATE Data: UNREAD_VOICEMAIL, 0 or 1 Where 0 represent No Unread Voicemails and 1 represents New Voicemail Available. This data can be used to update MWI indicator.
+        # LED Scenario 3: Missed Calls State: When the user has a new missed call, the application will broadcast an intent. 
+        # Action : com.microsoft.skype.teams.ipphone.APP_MISSEDCALL_STATE Data: MISSED_CALLS, 0 or 1 Where 0 represent No new missed calls and 1 represents New missed calls Available. This data can be used to update MWI indicator. 
+        # LED Scenario 4: Incoming Call State: When the user has a new incoming call, the application will broadcast an intent. 
+        # Action : com.microsoft.skype.teams.ipphone.APP_INCOMINGCALL_STATE Data: INCOMING_CALL, 0 or 1 Where 0 represent No new incoming call and 1 represents a new incoming call.This data can be used to update MWI indicator and to play dial tone when user picks up the handset of presses speaker button. 
+        # LED Scenario 5: In Call State: When the user is in a call or conference, the application will broadcast an intent.
+        # Action : com.microsoft.skype.teams.ipphone.APP_INCALL_STATE Data: IN_CALL, 0 or 1 Where 0 represents call is in progress (no audio) and 1 represents a call in progress. This data can be used by partners to reset the voice channel to the speaker for the next incoming call to ring. This data can be used to update the speaker button LED.
+        # LED Scenario 6:
+        # Action :
+        # LED Scenario 7: Voicemail Playing State: When the user is playing voicemail audio, the app will send an intent 
+        # Action : com.microsoft.skype.teams.ipphone.APP_VOICEMAILPLAYING_STATE (Play/Pause button or Speed button on voicemail tab) Data: PLAYING_VOICEMAIL, 0 or 1  Where 0 represent that no voicemail audio is playing and 1 represents that the user has chosen to play the voicemail audio.  This data can be used to update the speaker button LED. 
+        # LED Scenario 8: When user chooses audio output via touch screen UI during calls 
+        # Action : com.microsoft.skype.teams.ipphone.partner.APP_AUDIO_STATE Data: HANDSETHOOK, 0 or 1 (similar to earpiece mode in mobile) SPEAKER, 0 or 1 HEADSETHOOK, 0 or 1 where 0 represents off and 1 represents on. 
+        # LED Scenario 9: User SignIn State: When the user is signed into the Teams app, the application will broadcast an intent 
+        # Action : com.microsoft.skype.teams.ipphone.APP_USER_STATE Data: SIGNED_IN, 0 or 1 Where 1 represents user is signed in, 0 represents user is signed out 
+
+  ## Dial Tone requirements 
+        Firmware is responsible for playing the dial tone when the user picks up the handset or presses the speaker button to initiate an outgoing call. This might not apply for hardware that does not have handset or speaker buttons. 
+        # Firmware must play a dial tone to the user via the user’s chosen audio channel (handset, headset or speaker) when an audio channel is activated (user-initiated) and all of the of the following intents are set to 0 by the Microsoft Teams Application.  (com.microsoft.skype.teams.ipphone.APP_INCOMINGCALL_STATE is set to 0) AND (com.microsoft.skype.teams.ipphone.APP_INCALL_STATE is set to 0) AND (com.microsoft.skype.teams.ipphone.APP_VOICEMAILPLAYING_STATE is set to 0) If the speaker is the active audio channel, the Speaker LED must be ON when dial tone is playing. 
+        # Firmware must stop playing a dial tone to the user via the user’s chosen audio channel (handset, headset or speaker) when one of the following states is set to 1 by the Microsoft Teams Application. (com.microsoft.skype.teams.ipphone.APP_INCOMINGCALL_STATE is set to 1) OR (com.microsoft.skype.teams.ipphone.APP_INCALL_STATE is set to 1) OR (com.microsoft.skype.teams.ipphone.APP_VOICEMAILPLAYING_STATE is set to 1) 
+        # Firmware must stop playing a dial tone to the user when user starts dialing number on dial pad. Firmware must play dial tone again if the user clears phone number on dial pad. 
+  ## Firmware release requirement
+        Firmware package must include the BIOS compatible with the specific hardware, the DSP and supporting drivers, and the operating system configuration as defined in this document. Firmware package must also include updateable Device Settings application, Partner Agent, Microsoft Admin Agent, Microsoft Company Portal, and the Microsoft Teams application. It is the firmware package as described above that will be considered the certification firmware build and released officially for customers to download via TAC.
+        # For each product release, the partner must provide 3 versions of the firmware bundle: 
+          1] userdebug build: used by Microsoft Teams Engineering to develop and test new features on the specific firmware version 
+          2] ‘dummy’ ADB enabled build: used by Microsoft QA teams for integration and feature testing 
+          3] ADB disabled and release signed build: official build that will be released to customers, must be ‘released’ signed. Version must be higher than the ‘dummy’ build 
+  ## Device management
+        * Microsoft Teams certified devices are managed devices, management functions being provided via the Microsoft Teams Admin Center (TAC) solution. 
+        * TAC provides tenant administrators the ability to add new certified devices into their system, update these devices to the latest firmware, push application updates to these devices in a regular and reliable fashion and allow remote management of the devices.  
+        * TAC also provides tenant administrator access to phone-specific logs to debug failures scenarios including audio failures, connectivity issues, etc. 
+        * The device management agent is a software application/service which resides on the target device to allow for performance of the required device management activities. Implementation requirements for the device management agent are specified in 'Partner agent requirements' of this document. 
+          1] Device must support an agent running in the background to communicate and integrate with TAC.  
+          2] Device must apply all firmware, application and configuration updates received from TAC via intents. 
+          3] Device must retain application settings and device settings after application updates and/or firmware updates have been applied to the device. 
+          4] Device must not require factory resets after receiving updates through TAC 
+          5] Device may have an option to upgrade the firmware manually (via the web interface) when signed in as an administrator. 
+          6] TAC provides the tenant administrator access to device-specific logs to debug failures scenarios including audio failures, connectivity issues, etc. 
+          7] Device must allow Teams app to read ANR and tombstone logs for debugging purposes since the files downloaded from TAC don't contain logs from the OS.
+             - Teams app should be able to read the /data/anr and /data/tombstone directories as well as be able to read the content of all trace files within the /data/anr and /data/tombstones directory.
+             - Teams app will read all the files from these directories using standard Android IO APIs and attach to the log reported downloaded from TAC  
+          8] Device must upload logs without revealing PII data to the TAC solution. 
+          9] Device must report telemetry events to integrate reporting device status with the TAC solution.
+          10] If the Microsoft Admin Agent terminates for any reason, firmware must restart the admin agent after a period of 15 minutes. The admin agent must be started as described in section 4.0 of this document. 
+  ## Development and support tools
+        # Android Debug Bridge (ADB) 
+           1] Firmware must provide ADB utility  
+           2] Partner must have the ability to provide firmware builds with ADB enabled, or disabled during certification process for engineering collaboration purposes 
+           3] The certified GA build must not have ADB enabled 
+        # FTP or Telnet
+           1] Partners can choose to have FTP and/or Telnet ports enabled during development phase 
+           2] The certified GA build must have FTP and Telnet disabled 
+        # Syslog
+           1] Partners can choose to have syslog enabled during development phase 
+           2] The certified GA build may have syslog enabled 
+  ## User Messaging requirements
+        * Device must provide message during updates of any of the Teams related applications running on the device  
+        * The device must provide a visual indicator when the device is offline
+        * All user messages must be localized for all partner supported languages. See Microsoft Teams Supported Languages section of this document 
+  ## OS level battery optimization requirements
+        The OS level battery optimization must be turned OFF, regardless of whether the device uses battery or not. The operating system shouldn't start optimizing power by throttling network calls and/or reducing the thread priority of the Teams process. 
+  ## Hard Button Mapping requirements 
+        For devices providing hard buttons, the Microsoft Teams Phones application will provide support for hardware buttons for call handling functions not limited to Redial, Mute/Unmute, Hold/Resume and Call Transfer.  
+        Any hardware button on the device must be actionable by the user. See the table below for a list of actions that are supported by the Microsoft Teams application. Partners are encouraged to collaborate with Microsoft if they anticipate adding new hardware buttons outside of this list. 
+        All hardware buttons on the device should be mapped to a KeyEvent defined for Android. Events that are not supported by Android should be mapped to the permitted custom Key Codes as defined in the Table below. 
+        * item 1: Volume Control 
+        * Description: User can control local devices’ volume via the up and down hardware buttons 
+        * KeyEvents/Intent: KEYCODE_VOLUME_UP KEYCODE_VOLUME_DOWN 
+
+        * item 2: Mute / Unmute 
+        * Description: User can mute/unmute the local device microphone. If the device supports an LED for indication of mute state, it should indicate the MUTE state.  
+        * KeyEvents/Intent: KEYCODE_MUTE 
+
+        * item 3: Standard dial pad 
+        * Description: User can use buttons supported on dial pad, Phone keys 0 – 9, Phone key Star (*), Phone Key Pound (#) 
+        * KeyEvents/Intent: KEYCODE_0 to KEYCODE_9 KEYCODE_STAR KEYCODE_POUND
+
+        * item 4: ‘+’ in dial pad 
+        * Description: Interpret ‘+’ from dialpad 
+        * KeyEvents/Intent: LongPress on KEYCODE_0 
+
+        * item 5: DTMF support 
+        * Description: Support for standard DTMF tones  
+        * KeyEvents/Intent: KEYCODE_0 to KEYCODE_9 KEYCODE_STAR KEYCODE_POUND
+
+        * item 6: Contacts 
+        * Description: User can launch Contact Search in the Microsoft Teams application by pressing the Contacts button 
+        * KeyEvents/Intent: KEYCODE_CONTACTS 
+
+        * item 7: Voice mail 
+        * Description: A user can press a button to access their voicemail in the Microsoft Teams application on the device 
+        * KeyEvents/Intent: KEYCODE 500 
+
+        * item 8: Hold/Resume 
+        * Description: A user can place a hold  
+        * KeyEvents/Intent: KEYCODE 501 
+
+        * item 9: Call Transfer 
+        * Description: Ability to transfer a call to another user 
+        * KeyEvents/Intent: KEYCODE 502 
+
+        * item 10: Redial  
+        * Description: User can redial the last called number.  
+        * KeyEvents/Intent: KEYCODE 504 
+
+        * item 11: Headset 
+        * Description: User can press a button on the phone to switch the audio to a USB connected headset 
+        * KeyEvents/Intent: KEYCODE 505 
+
+        * item 12: Speaker 
+        * Description: User can press a button on the phone to switch the audio to speakerphone.
+        * KeyEvents/Intent: KEYCODE 506 
+
+        * item 13: Handset 
+        * Description: User can pick up the handset on the phone to switch the audio to the handset. 
+        * KeyEvents/Intent: KEYCODE 507 
+
+        * item 14: Off hook support 
+        * Description: User can initiate or accept an incoming call via the Microsoft Teams application on the device and audio is expected to come to the phone handset or headset.The firmware is responsible of managing audio through multiple output channels (headset, handset, or speakerphone).
+        * KeyEvents/Intent: The firmware must broadcast the intent below to inform the application about the audio channel that is currently active. 
+
+        * item 15: Video 
+        * Description: User can initiate or accept an incoming video call via the Microsoft Teams application on the device.  
+        * KeyEvents/Intent: KEYCODE 508 
+  ## Audio Channel requirements 
+        # High level requirements 
+          The user can initiate or accept an incoming call on the device through one of four options:  
+          1] Pick up Handset (if applicable) 
+          2] Press Speaker phone button 
+          3] Headset 
+          4] Touch Screen (Join/End Buttons) on the Microsoft Teams application 
+          In all the cases listed above, audio is expected to play over one of the three possible output channels: Headset, Handset or Speakerphone.  Firmware is responsible for handling the audio flow through the user’s preferred channels and switching of the audio flow between these channels. For example, if the user chooses to pick up a call via the handset and transfer audio flow to the speaker phone, the firmware must route the audio channel from the handset to the speaker phone.  Firmware must play the audio via the channel chosen by the user and transfer the audio based on user behavior. If the audio channel is not switched during the call, the firmware must interpret a second action on the same hardware button press as ending the call. 
+        # Audio Channel switching
+          * Initail state - Audio Switching while in a call – Device Speaker  
+          * Action - Speaker is selected   
+          * Expected state - Speaker is lit. Soft key shows the Speaker, and the audio is flowing through the speaker. 
+          * Teams App to firmware - User selects the soft speaker button -> app updates AudioManager.setSpeakerphoneOn(true)  
+          * Firmware to App intent - PHONE_STATE_UPDATED intent:  Speaker =1 Headset=0 Handset=0  
+
+          * Initail state - Audio Switching while in a call – USB Headset connected  
+          * Action - Headset is selected   
+          * Expected state - Headset button is lit on the device and the soft key shows headset connected.  
+          * Teams App to firmware - AudioManager.setSpeakerphoneOn(false) BT_SCO is not initiated
+          * Firmware to App intent - PHONE_STATE_UPDATED intent: Speaker =0  Headset=1  Handset=0  
+
+          * Initail state - Audio Switching while in a call – BT Connected 
+          * Action - BT Soft Key is selected    
+          * Expected state - Soft key show BT is connected. Audio should flow from the connected BT.
+          * Teams App to firmware - AudioManager.setSpeakerphoneOn(false) BT_SCO is initiated  
+          * Firmware to App intent - PHONE_STATE_UPDATED intent:  Speaker =0 Headset=1 Handset=0
+
+          * Initail state - Audio Switching while in a call - Handset  
+          * Action -
+          * Expected state - 
+          * Teams App to firmware - Teams will not send any intent. It would show handset icon. User cannot select the icon
+          * Firmware to App intent - PHONE_STATE_UPDATED intent: updated Speaker =0  Headset=0 Handset=1  
+        -> note - Whenever the user chooses to switch between the hard button on the device to the soft key on the app, the audio should flow through the selected channel. And the    soft key should show the correct audio channel selected.  
+
+        # Default Audio Channel when BT?USB Headset is connected
+           * Initail state - Incoming and Outgoing call default audio channel  
+          * Action - only BT is connected  
+          * Expected state - The default audio channel should the connected BT.  
+          * Teams App to firmware - In this case we initialize the BT_SCO connection and we call AudioManager.setSpeakerphoneOn(false) 
+          * Firmware to App intent - PHONE_STATE_UPDATED intent: Headset=1; Speaker =0; Handset=0  
+
+          * Initail state - Incoming and Outgoing call default audio channel  
+          * Action - BT and USB headset both are connected  
+          * Expected state - USB headset will be the default audio channel.  
+          * Teams App to firmware - Incoming call: Here, if the user accepts the call on the UI the default audio channel should be the USB headset. BT_SCO is not initiated.
+          * Firmware to App intent - PHONE_STATE_UPDATED intent: Headset=1 Speaker =0 Handset=0 
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+

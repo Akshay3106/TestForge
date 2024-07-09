@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+  font-family: 'Urbanist', sans-serif;
+}
+
+h1 {
+  font-family: 'Rubik Moonrocks', sans-serif;
+}
+.bg-banner-image {
+  background-image: url('C:\Users\AkshayPatil\TEST_CASE_WRITER\Test_Case_Writer\frontend\my-project\src\assets\red-abstract-5120x3200-17394.jpg');
+  background-size: cover;
+  height: 100vh;
+}

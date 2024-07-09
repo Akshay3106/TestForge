@@ -1,0 +1,73 @@
+##  **Hotline feature for ipphones**
+## Quick summary
+    Upon pick up of the phone receiver or when turning speaker on, a preconfigured number / contact is called
+
+## Out of scope for now but will be in U3
+     Styling, UX
+     Syncing Hotline settings from / to TAC
+     Translation
+## Testing scope
+     Testing of this app will be from a custom build for now as we want this tested for the Enterprise Connect event while merging of code to Canary could take some time. There are links in the FTR description for different architecture of the apk.
+     Able to switch between the two modes from calling options for user with CAP license
+     i.e. Certified CAP devices MP54, CCX400, minimum one for each OEM
+     Configure Hotline from existing contact or a PSTN number including Emergency number
+     Configured Hotline number is called when user picks up
+     Live captions, Dial pad from in call screen, all other features off
+## Concerns
+     Configuration of Hotline number or contact
+## Instructions
+     Sign in with an user with a CAP license (test build forces ECS flag on)
+## Navigations
+     1) From settings, find an login to admin settings to locate calling options. In 'calling options', you should see the 'Hotline option' screen.
+         ## UI
+         Screen with navigation bar identified as calling and down in body options available like call forwarding, forward to, advance calling, Hotline.
+     2)Tapping on Hotline will show the Hotline settings screen
+         ## UI
+         Screen with navigation bar identified as 'Hotline' ,in right corner of it there is buttom to 'continue' and in body it has options like Hotline enable disable button and below it has option like 'add configured number' this option has one instruction saying The configured number auto-dial while user pick up the phone.
+     Since you haven’t configured any number / contacts yet, you’ll see Add configured number but will 
+     change when you do have it configured to a PSTN number or a contact is chosen. 
+     3) Tapping on Add configured number will show a dialog to configure the hotline feature.
+        ## UI
+        Screen display one box with 'Add contact heading' and two input boxes one as a 'number' and another 'display name' and at the right bottom corner two options 'cancel' and 'save'.
+      From here, you can either enter a number (PSTN / emergency #) or choose from a contact. 
+      You can also enter a different displayed name if you want to specify a specific name to display 
+      Tapping on save will go through validation on whether it succeeded or failed. 
+      If configured properly, you’ll see the Hotline settings screen updated with the entered information.
+        ## UI
+        Screen with navigation bar identified as 'Hotline' ,in right corner of it there is button to 'continue' and in body it has options like Hotline enable disable button and below it  display the information of the contact added with the pen icon.
+      You can now tap on the pen icon on the right to make modification to the Hotline contact to be called
+## Important notes
+     The “Continue” button will always be enabled unless Hotline toggle is on but no Hotline contact is 
+     entered 
+     The Hotline information entered are stored into the user’s preferences meaning if the user logs out, 
+     all this information will be reset but do persist if the device is restarted.  
+     4) Tapping on Continue will show this dialog letting the user know the configurations will be take place 
+     after restarting the app
+        ## UI
+        Screen shows one box with dialog "You'll need to restart to apply changes" and provides two options 'cancel' and 'restart',
+     5)  If the Hotline toggle was on and the Hotline contact  was configured properly, the Hotline home 
+     screen will show up.
+         ## UI
+         Screen with the box which says 'Pick up the handset to be automatically connect to IT Help Desk'.
+     6) From this home screen, picking up the phone receiver or turning the speaker on will make a call to the 
+     preconfigured Hotline contact.
+         ## UI
+        Screen with calling ui where it shows status if calling then calling if received then timer. Down side it shows options like 'live caption','Dialpad','End call'.
+     Tapping on the Live captions will enable / disabled it 
+     Tapping on the Dialpad will show the dial pad 
+     Tapping on the End call will end the call
+## Known Bugs
+     1)Underline missing for the number input.
+     2)Text alignment, styling etc.
+     3)After restarting turning off Hotline toggle and restarting user in CAP mode, top bar is missing so 
+     user cannot access settings. 
+     4)Turning off speaker doesn’t terminate call.
+     5)Contact picker 
+         We’re using the same contact picker that’s used throughout the app and there are 
+         existing issues which will also affect Hotline 
+         5.1) Can’t find a contact error image taking up more space than available and also cut off at the top 
+         due to alignment 
+         5.2) Shows contact in groups.  “i.e. Directory contacts” – due to limited horizontal space it’s not very ideal for Hotline 
+
+
+
