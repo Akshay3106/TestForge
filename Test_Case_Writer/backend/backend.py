@@ -1,11 +1,10 @@
 import locallay
-from langchain import LangChain
-
+import langchain
 # Load the Ollama model
-ollama_model = locallay.load_model("path/to/ollama_model")
+ollama_model = locallay.load_model("C:\\Users\\AkshayPatil\\AppData\\Local\\Programs\\Ollama\\ollama.exe")
 
 # Create a LangChain instance
-langchain = LangChain()
+
 
 # Prompt the user for the feature details
 feature_details = input("Enter the feature details: ")
@@ -39,3 +38,4 @@ for i, test_case in enumerate(generated_test_cases):
     print("Expected Result:")
     print(test_case["expected_result"])
     print()
+    print("------------------------------")
