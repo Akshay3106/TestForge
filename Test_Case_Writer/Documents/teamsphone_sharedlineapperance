@@ -1,0 +1,63 @@
+This browser is no longer supported.
+Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+Share via
+Shared line appearance in Microsoft Teams
+In this article
+Shared line appearance lets a user choose a delegate to answer or handle calls on their behalf. This feature is helpful if a user has an administrative assistant who regularly handles the user's calls. In the context of shared line appearance, a manager is someone who authorizes a delegate to make or receive calls on their behalf. A delegate can make or receive calls on behalf of the delegator.
+Important
+This feature is only in Teams Only deployment mode. For more information on Teams deployment modes, seeUnderstand Microsoft Teams and Skype for Business coexistence and interoperability
+Dialing Permissions and Routing
+When a delegate makes an outbound PSTN call on behalf of a delegator, the delegator's settings control the checks for appropriate licensing, dial-out restrictions, and call routing.
+License required
+Managers and delegates must have a Teams Phone license. Managers must have a phone number assigned, PSTN connectivity, and a required license for PSTN connectivity: Calling Plan, Operator Connect, or Direct Routing. The shared line experience is part of delegation and is included with Teams Phone. For more information on licensing, seeMicrosoft Teams service description.
+Note
+A delegate without a phone number assigned must be EnterpriseVoiceEnabled using the Teams PowerShell cmdlet Set-CsPhoneNumberAssignment -Identity <user> -EnterpriseVoiceEnabled $true, seeSet-CsPhoneNumberAssignment. If a Dial Pad shows in the Calls App of the Delegate, they are correctly configured for Enterprise Voice.
+Shared line appearance feature availability
+The following apps and devices currently support shared line appearance:
+Limitations
+Managers can add up to 25 delegates, and delegates can have up to 25 managers. There's no limit to the number of delegation relationships that can be created in a tenant.
+If the delegator and delegate aren't in the same geographic location, the PSTN provider must allow caller ID to show up from a different geographic location for a delegated call.
+Circular delegation configuration isn't permitted. If the delegated users also have delegations between them, they'll only be able to see their delegation and not the initial delegation.
+Enable delegation and shared line appearance
+You enable delegation by using theTeamsCallingPolicy AllowDelegationsetting. You can use Teams admin center or Teams PowerShell. This setting is turned on by default.
+When enabled, the end user can configure their delegation relationships directly in Teams.
+Important
+When you turn off delegation for a user, you also need to clean up delegation relationships for that user in the Teams admin center to avoid incorrect call routing.
+Use Teams admin center
+To configure delegation and shared line appearance:
+In the navigation menu of the Microsoft Teams admin center, selectVoice>Calling policies.
+Choose the policy you would like to update or selectAddto create a new policy.
+ToggleDelegation for inbound and outbound callson.
+SelectSave.
+Use PowerShell
+To configure delegation and shared line appearance by using Teams PowerShell, use the following cmdlets:
+New-CsUserCallingDelegate
+Set-CsUserCallingDelegate
+Remove-CsUserCallingDelegate
+Set-CsPhoneNumberAssignment
+Examples
+In the following example, user2@contoso.com is added as a delegate of user1@contoso.com with permissions to make and receive call on behalf of user1, and to change settings for other delegates:
+In the next example, delegate user2@contoso.com isn't allowed to make calls anymore on behalf of user1:
+In the next example, user2@contoso.com is removed as a delegate of user1@contoso.com:
+More information
+Share a phone line with a delegate
+Configure Teams calling policy
+New-CsTeamsCallingPolicy
+Set-CsTeamsCallingPolicy
+Feedback
+Was this page helpful?
+Feedback
+Coming soon: Throughout 2024 we will be phasing out GitHub Issues as the feedback mechanism for content and replacing it with a new feedback system. For more information see:https://aka.ms/ContentUserFeedback.
+Submit and view feedback for
+Additional resources
+Additional resources
+In this article
+Capability Teams Desktop Teams Mac App Teams Web App (Edge) Teams mobile iOS/Android App Teams IP phone
+Set up delegation Yes Yes Yes Yes Yes
+Receive calls on behalf of another Yes Yes Yes Yes Yes
+Call a phone number on behalf of another Yes Yes Yes Yes Yes
+Call a Teams user on behalf of another Yes Yes Yes Yes Yes
+See the delegate view of shared lines Yes Yes Yes Yes Yes
+See the delegate view of manager's call activities Yes Yes Yes No Yes
+See the manager view of delegates Yes Yes Yes Yes Yes
+Delegate or manager can hold or resume Yes Yes Yes No Yes
