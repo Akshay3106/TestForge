@@ -1,0 +1,2 @@
+The dial pad functionality has been enhanced to support auto-complete for frequently dialed numbers. Additionally, 
+there is a new feature that blocks calls to specific numbers after a certain number of failed attempts.

@@ -1,0 +1,753 @@
+[
+    {
+        "testCaseID": "204478",
+        "testCaseTitle": "[Outgoing Call] DUT user calls PSTN user from Dialpad(Hard Keys for LCP)",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "BVT_TP",
+            "Certification_Audio",
+            "Modified",
+            "Sanity_TP",
+            "Smoke_TP",
+            "tp_audio"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Observe Home screen,DUT user pickup the handset and dial a PSTN number\u00a0with the hard keys and wait for auto dial. PSTN user picks up the call",
+                "expectedResult": [
+                    "Verify that when user picks up the handset then dial pad opens up.",
+                    "Verify that that call is auto dialed within 4 secs after typing the correct PSTN number.",
+                    "Call should be connected properly with a 2-way audio.",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "PSTN user disconnects the call ",
+                "expectedResult": [
+                    "U2: Call should be disconnected  and DUT user navigates to home page.",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "On Home screen, DUT user pickup the handset and dial a PSTN number\u00a0from soft key dial pad. PSTN user picks up the call",
+                "expectedResult": [
+                    "user picks up the handset then dial pad opens up and user can type the numbers from soft keys.",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "DUT user disconnects the call",
+                "expectedResult": [
+                    "Verify that call is disconnected properly, and DUT user navigate to home screen."
+                ]
+            },
+            {
+                "stepNumber": 5,
+                "action": "U2: User tap on Dialpad icon on bottom right corner of recent tab/ favorite tab\n\n\n\n\n\n",
+                "expectedResult": [
+                    "U2: Landscape: Dial pad displayed to left side and recent/ favorite tab to right side.",
+                    "Portrait: Dialpad should open at full screen",
+                    "Back navigation button should be available on screen when Dialpad is open.",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 6,
+                "action": "User dial a PSTN number using soft keys on screen",
+                "expectedResult": [
+                    "PSTN user receive the call",
+                    "Two way communication start between PSTN user and DUT user"
+                ]
+            },
+            {
+                "stepNumber": 7,
+                "action": "Note: When DUT user enters more than 3 digits and leaving the device idle a call is initiated and announces as \"we couldn't complete the call\", if it is an invalid number.",
+                "expectedResult": []
+            }
+        ]
+    },
+    {
+        "testCaseID": "204577",
+        "testCaseTitle": "[Outgoing Calls] DUT user calls Teams Client user using Dialpad",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Dial the DID of the  Client user from the Dial pad",
+                "expectedResult": [
+                    "Call should be connected properly with a 2-way audio.",
+                    "U2: Landscape: Calls tab-->Dial pad displayed to left side and recent/ favorite tab to right side of the screen."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify Call UI are visible.",
+                "expectedResult": [
+                    "Hold, Transfer, Mic on, more option should be displayed for the full duration of the call."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user disconnects the call.",
+                "expectedResult": [
+                    "Call should be disconnected and DUT user navigated to calls tab."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "Note: In C455HD , Dialpad is not opening properly as per design in lower end devices",
+                "expectedResult": []
+            }
+        ]
+    },
+    {
+        "testCaseID": "202645",
+        "testCaseTitle": "[Outgoing Calls] DUT user calls PSTN user from Favorite tab and Recent tab",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls the PSTN from speed dial.\nU2 Landscape: Dial pad displayed to left side and recent/ favorite tab to right side\nPortrait: Calls tab-->Favorite / recent tab should display\n\nDUT user calls the PSTN from Favorite tab\n",
+                "expectedResult": [
+                    "Call should  connect properly with a 2-way audio.",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "PSTN user disconnects the call",
+                "expectedResult": [
+                    "Verify Call should  disconnect and DUT user navigated to favorite tab."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "U2: DUT user dials PSTN user from recent call history.\nU2: User should be selected from the recent call history. Call icon, contact card &\nadd to favorites icons should be displayed.\n\n\n\u00a0\n",
+                "expectedResult": [
+                    "Verify Call should be connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "PSTN user disconnects the call",
+                "expectedResult": [
+                    "Verify Call should  disconnect and DUT user navigated to recent tab."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "201432",
+        "testCaseTitle": "[Outgoing Calls] DUT user call is rejected by TDC",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls TDC user.",
+                "expectedResult": [
+                    "Verify DID number is displaying in the pre calling screen of the DUT.",
+                    "And TDC should start ringing."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "TDC user Rejects the call.",
+                "expectedResult": [
+                    "DUT user should be redirected to VM and able to leave voicemail successfully."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "200221",
+        "testCaseTitle": "[Outgoing Calls] DUT user to make 2nd call",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user makes a call to TDC-1.",
+                "expectedResult": [
+                    "TDC-1 picks the call and connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "DUT user can make another call while already in a call.",
+                "expectedResult": [
+                    "DUT user should call TDC-2."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user initiate 2nd call to TDC 2",
+                "expectedResult": [
+                    "1st call should go to hold and the second Call should connect properly with a 2-way audio."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "289446",
+        "testCaseTitle": "[Outgoing Calls] DUT user to dial from hard key pad irrespective of the UI view",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user is on calendar tab\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0",
+                "expectedResult": [
+                    "Scheduled meetings should be displayed",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "User press speaker button and dials the number from hard keypad",
+                "expectedResult": [
+                    "Dial pad should be displayed if user press the speaker button. User should be able to dial the numbers from hard keypad to place the call.",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "Place the call after switching handset/headset/speaker mode",
+                "expectedResult": [
+                    "Verify that the call is placed, even after switching the handset/headset/speaker mode"
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "284223",
+        "testCaseTitle": "[Outgoing Calls] Verify call history for a newly created user",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Sign-in with newly created user account into DUT.",
+                "expectedResult": [
+                    "New user should be successfully signed in."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify the App for data in the Calls and Voicemail tabs.",
+                "expectedResult": [
+                    "New user should not have any data in Calls and Voicemail tabs."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "280991",
+        "testCaseTitle": "[Outgoing Calls] DUT user handle the call upgrade from audio to Video by Teams client",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls TDC and TDC accepts the call",
+                "expectedResult": [
+                    "The call should be established between DUT user and TDC user with two-way audio.",
+                    "Verify that DUT user does not have Chat and video option on the call entry window and on call roaster once the call is connected successfully."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify TDC user enables video during the call.",
+                "expectedResult": [
+                    "Verify that even though device does not support video, 2 -way audio continues to flow without any glitch."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "271332",
+        "testCaseTitle": "[Outgoing Call] DUT user continues the call without issues when client shares Desktop",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls TDC user and TDC accepts the call",
+                "expectedResult": [
+                    "Call is connected between DUT user and TDC user with two-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "TDC user shares the screen",
+                "expectedResult": [
+                    "Shared screen should not reflect on DUT and should not drop out from the call. Two-way audio communication should flow continuously between Client App user and TDC user when screen is being shared by the TDC user."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "221300",
+        "testCaseTitle": "[Outgoing Calls] Auto dial PSTN number from on-hook and off -hook",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user dials PSTN with hard key and wait for auto dialing",
+                "expectedResult": [
+                    "U2: Verify that dial pad opens up and start auto dialing within 3 secs after typing numbers.",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "PSTN user picks up the call",
+                "expectedResult": [
+                    "Verify that call is connected with 2-way audio"
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user picks up the handset (Off-Hook).",
+                "expectedResult": [
+                    "U2: Verify that dial pad opens up and user should hear the dial tone.",
+                    ""
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "DUT user dials PSTN number from hard key and wait for auto dialing",
+                "expectedResult": [
+                    "DUT should start auto dialing within 3 secs after typing the numbers."
+                ]
+            },
+            {
+                "stepNumber": 5,
+                "action": "PSTN user picks up the call",
+                "expectedResult": [
+                    "Verify that call is connected with 2-way audio and audio is flowing through handset on the device."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308400",
+        "testCaseTitle": "",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automated"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Shared steps: Navigate to calls tab ",
+                "expectedResult": [
+                    "U2: Landscape: Calls tab should be displayed with favorite & recent tabs to right side of the screen and Dialpad to left side."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "DUT user select a contact",
+                "expectedResult": [
+                    "Call should be connected successfully with two-way audio."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user disconnect the call",
+                "expectedResult": [
+                    "Call should be disconnected gracefully, and DUT user should be navigated to recent tab."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308401",
+        "testCaseTitle": "[Outgoing Calls] DUT user calls Teams Client user using Dialpad",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automated"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Dial the DID of the Teams Client user from the Dial pad",
+                "expectedResult": [
+                    "Call should be connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify Call UI are visible.",
+                "expectedResult": [
+                    "Hold, Transfer, Mic on, more option should be displayed for the full duration of the call."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user disconnects the call.",
+                "expectedResult": [
+                    "Call should be disconnected gracefully, and DUT user should be navigated to calls tab."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "Note: In C455HD , Dialpad is not opening properly as per design in lower end devices",
+                "expectedResult": []
+            }
+        ]
+    },
+    {
+        "testCaseID": "308402",
+        "testCaseTitle": "[Outgoing Calls] DUT user calls PSTN user from Favorite tab and Recent tab",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automaed"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls the PSTN from speed dial.",
+                "expectedResult": [
+                    "Verify call should be connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "PSTN user disconnects the call",
+                "expectedResult": [
+                    "Verify Call should be disconnected gracefully, and DUT user should be navigated to favorite tab."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "U2: DUT user dials PSTN user from recent call history.",
+                "expectedResult": [
+                    "Verify Call should be connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "PSTN user disconnects the call",
+                "expectedResult": [
+                    "Verify Call should be disconnected gracefully, and DUT user should be navigated to recent tab."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308403",
+        "testCaseTitle": "[Outgoing Calls] DUT user to make 2nd call",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automated"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user makes call to TDC-1.",
+                "expectedResult": [
+                    "TDC-1 answers and the call should be connected properly with a 2-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "DUT user can make another call while already in a call.",
+                "expectedResult": [
+                    "DUT user should be able to call TDC-2."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user initiate 2nd call to TDC 2",
+                "expectedResult": [
+                    "1st call should go to hold and the second Call should be connected properly with a 2-way audio."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308404",
+        "testCaseTitle": "[Outgoing Calls] DUT user to dial from hard key pad irrespective of the UI view",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Manual"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user is on calendar tab",
+                "expectedResult": [
+                    "Scheduled meetings should be displayed."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "User press speaker button and dials the number from hard keypad or directly able to dial from hard key pad to place the call. ",
+                "expectedResult": [
+                    "Dial pad should be displayed if user press the speaker button. User should be able to dial the numbers from hard keypad to place the call."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "Place the call after switching the handset/headset/speaker mode",
+                "expectedResult": [
+                    "Verify that the call is placed, even after switching the handset/headset/speaker mode"
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308405",
+        "testCaseTitle": "[Outgoing Calls] Verify call history for a newly created user",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automated"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "Sign-in with newly created user account into DUT. ",
+                "expectedResult": [
+                    "New user should be successfully signed in."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify the App for data in the Calls and Voicemail tabs.",
+                "expectedResult": [
+                    "New user should not have any data in Calls and Voicemail tabs."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308406",
+        "testCaseTitle": "[Outgoing Calls] DUT user handle the call upgrade from audio to Video by Teams client",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Manual"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls TDC and call is answered by the TDC",
+                "expectedResult": [
+                    "The call should be established between DUT user and TDC user with two-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "Verify TDC user enables video during the call.",
+                "expectedResult": [
+                    "Verify that even though device does not support video, 2 -way audio continues to flow without any glitch."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308407",
+        "testCaseTitle": "[Outgoing Calls] DUT user continues the call without issues when Teams client shares Desktop",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Manual"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user calls TDC user and call is answered by TDC",
+                "expectedResult": [
+                    "Call should be established between DUT user and TDC user with two-way audio."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "TDC user shares its desktop.",
+                "expectedResult": [
+                    "Shared screen should not reflect on DUT and should not drop out from the call. Two-way audio communication should continuously flow between Teams App user and TDC user when screen is being shared by the TDC user."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308408",
+        "testCaseTitle": "[Outgoing Calls] Auto dial PSTN number from on-hook and off -hook",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Manual"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user dials PSTN number from hard key and wait for auto dialing",
+                "expectedResult": [
+                    "U2: Verify that dial pad opens up and start auto dialing within 3 secs of typing the numbers."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "PSTN user picks up the call",
+                "expectedResult": [
+                    "Verify that call is connected with 2-way audio"
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "DUT user picks up the handset (Off-Hook).",
+                "expectedResult": [
+                    "U2: Verify that dial pad opens up and user should hear the dial tone."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "DUT user dials PSTN number from hard key and wait for auto dialing",
+                "expectedResult": [
+                    "DUT should start auto dialing within 3 secs of typing the numbers."
+                ]
+            },
+            {
+                "stepNumber": 5,
+                "action": "PSTN user picks up the call",
+                "expectedResult": [
+                    "Verify that call is connected with 2-way audio and audio is flowing through handset on the device."
+                ]
+            }
+        ]
+    },
+    {
+        "testCaseID": "308409",
+        "testCaseTitle": "[Outgoing Calls] User to test soft key and Hard key dial Pad",
+        "application": "",
+        "testType": "Test Case",
+        "responsibleTeams": [
+            ""
+        ],
+        "testTags": [
+            "Automated"
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "action": "DUT user press on Speaker button",
+                "expectedResult": [
+                    "Verify that dial pad is opened, and number can be dialed."
+                ]
+            },
+            {
+                "stepNumber": 2,
+                "action": "DUT user dials the numbers from 0 to 9 including \u201c+\u201d by long press of \u201c0\u201d through soft keys. (the intention here is user can dial a PSTN call from soft dial pad. E.g +1234567890)",
+                "expectedResult": [
+                    "DUT should accept the inputs from the soft Keypad and the numbers typed should be visible on the screen."
+                ]
+            },
+            {
+                "stepNumber": 3,
+                "action": "User clicks on place call icon",
+                "expectedResult": [
+                    "Tapping on the place call icon should start dialing."
+                ]
+            },
+            {
+                "stepNumber": 4,
+                "action": "DUT user is able to dial the numbers from hard keys .",
+                "expectedResult": [
+                    "Device should accept the inputs from the hard Keypad and should be visible on the screen."
+                ]
+            },
+            {
+                "stepNumber": 5,
+                "action": "User can place a call after pressing the hard keys",
+                "expectedResult": [
+                    "User should be able to place the call and should be connected properly with a 2-way audio."
+                ]
+            }
+        ]
+    }
+]
