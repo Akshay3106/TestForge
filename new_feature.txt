@@ -1,2 +1,132 @@
-The dial pad functionality has been enhanced to support auto-complete for frequently dialed numbers. Additionally, 
-there is a new feature that blocks calls to specific numbers after a certain number of failed attempts.
+**AMAZON SHOPPING APP — DETAILED USER JOURNEY (TEXT FORMAT)**
+
+***
+
+**STAGE 1: AWARENESS**
+
+The user journey begins when a potential customer becomes aware of the Amazon shopping app. This can happen through multiple touchpoints: seeing a targeted advertisement on social media (Facebook, Instagram, YouTube), watching a TV commercial promoting Prime membership with free two-day delivery, receiving a recommendation from a friend or family member who regularly shops on Amazon, or searching for "shopping app" in the App Store or Google Play Store. The user is attracted by Amazon's core value propositions: lowest prices, vast product selection, fast and reliable delivery, and the convenience of one-click ordering.
+
+At this stage, the user downloads the Amazon shopping app from their device's app store. Upon opening the app for the first time, they are greeted with a welcome screen that prompts them to either sign in to an existing Amazon account or create a new account. Creating a new account requires entering basic information such as name, email address, and phone number, followed by setting a password. The user may also be offered the option to sign in using Google or Facebook for faster onboarding. Once registered, the user is taken to the app's home screen, which displays personalized product recommendations, ongoing deals, and category shortcuts.
+
+**Business Objective at This Stage:** Capture the user's interest and encourage app download and account creation through compelling messaging about Amazon's unique benefits (low prices, fast delivery, vast selection).
+
+***
+
+**STAGE 2: CONSIDERATION**
+
+Now that the user has the app installed and is logged in, they enter the consideration phase. The user's goal is to find a specific product or browse categories to discover items they might want to purchase. Let's say the user is looking to buy wireless headphones. They begin by tapping on the search bar at the top of the home screen and typing "wireless headphones" or using voice search by tapping the microphone icon and saying "wireless headphones."
+
+The app displays search results showing a variety of wireless headphones from different brands, price ranges, and features. The user can refine their search using filters available on the left side or top of the screen: price range (e.g., ₹1,000–₹5,000), brand (e.g., Sony, Bose, Boat), customer rating (4 stars and above), Prime eligibility, delivery speed, and other attributes like color, connectivity type, or battery life.
+
+As the user scrolls through the product listing page, they see product images, titles, prices, discounts, customer ratings, and Prime badges. The user taps on a product that catches their attention, which takes them to the Product Detail Page (PDP). Here, they can view high-resolution images from multiple angles, read detailed product descriptions, check technical specifications, see what's included in the box, and review customer ratings and written reviews.
+
+On the PDP, the user may also see personalized recommendations such as "Customers who viewed this item also viewed," "Frequently bought together," and "Compare with similar items." These AI-powered suggestions help the user compare alternatives and make informed decisions. The user reads through customer reviews, paying attention to both positive and negative feedback, and may scroll through photos uploaded by other customers showing the product in real-world use.
+
+The user might add the product to their shopping cart but not immediately purchase it. They may continue browsing other products, comparing prices and features across multiple items. At this stage, the user is actively evaluating whether this product meets their needs and whether Amazon is the right place to buy it.
+
+**Business Objective at This Stage:** Help the user understand the product thoroughly, compare alternatives, and build confidence that this is the right purchase. Transparent product information, authentic reviews, and personalized recommendations are key.
+
+***
+
+**STAGE 3: PURCHASE**
+
+After carefully considering the product, the user decides to make a purchase. They tap the "Add to Cart" button to save the item for later checkout, or if they're ready to buy immediately, they tap the "Buy Now" button for faster checkout. If using "Add to Cart," the user can continue shopping for more items or proceed to checkout by tapping the cart icon at the bottom of the screen.
+
+On the cart page, the user reviews all items they want to purchase, checks quantities, and sees the subtotal before shipping and taxes. They can remove items, update quantities, or save items for later. The user may also see promotional banners offering discounts on additional items or reminders about items left in their cart from previous sessions.
+
+When ready to proceed, the user taps "Proceed to Buy" or "Checkout." The checkout screen presents several options:
+
+1. **Shipping Address:** The user selects from their saved addresses or adds a new one. Amazon stores multiple addresses (home, office, parents' home) for convenience. The user confirms the delivery location and can choose to add delivery instructions (e.g., "Leave at reception").
+
+2. **Delivery Speed:** The user chooses their preferred delivery option. Prime members see options like "FREE One-Day Delivery," "FREE Same-Day Delivery," or "FREE Two-Day Delivery." Non-Prime members see standard shipping options, often with a cost. The user compares delivery dates and costs.
+
+3. **Payment Method:** The user selects from saved payment methods (credit/debit cards, UPI accounts, net banking, Amazon Pay balance) or adds a new payment method. Amazon stores payment details securely for future one-click purchases. In India, UPI options like Google Pay, PhonePe, and Paytm are prominently displayed.
+
+4. **Promo Codes and Offers:** The user can enter a promo code if they have one, or they may see automatic discounts applied for Prime members, bank offers, or exchange offers for trading in old devices.
+
+5. **Order Summary:** The final screen shows a complete breakdown of the order: item price, shipping cost (if any), applicable discounts, taxes, and the total amount. The user reviews everything carefully.
+
+Once confirmed, the user places the order. For Prime members with one-click ordering enabled, this entire process can be completed with a single tap using biometric authentication (fingerprint or Face ID). After placing the order, the user sees an order confirmation screen with the order number, estimated delivery date, and a "Track Package" button. The user also receives an email and push notification confirming the order.
+
+**Business Objective at This Stage:** Provide a frictionless, transparent, and secure checkout experience that minimizes cart abandonment and maximizes conversion. One-click ordering, saved preferences, and upfront pricing are critical.
+
+***
+
+**STAGE 4: RETENTION**
+
+After the purchase is complete, the user journey enters the retention phase. The user now expects their order to arrive on time and in good condition. Amazon proactively keeps the user informed throughout the fulfillment process.
+
+Immediately after ordering, the user receives a push notification and email confirming that the order has been placed successfully. When the order is confirmed by the seller and handed over to the logistics partner, the user receives another notification: "Your order has been confirmed and is being prepared for shipment."
+
+Once the package is in transit, the user can track their order in real time by tapping "Track Package" in the app. The tracking page shows the current location of the package, the delivery route on a map, and the estimated delivery time. Notifications are sent at key milestones: "Package has left the fulfillment center," "Out for delivery," and "Delivered."
+
+On the delivery day, the user receives a push notification: "Your package is out for delivery and will arrive by 6 PM." The delivery driver may also call or send a message if there are issues locating the address. Once the package is delivered, the user receives a final notification: "Your package has been delivered." The app may also show a photo proof of delivery, confirming the package was left at the correct location.
+
+After delivery, the user's experience continues. They may receive a follow-up email a few days later asking, "How was your experience with this product?" with a link to write a review. The app may also display a prompt on the product page or in the "Your Orders" section inviting the user to rate the product and write a review.
+
+If the user is not satisfied with the product, they can initiate a return directly from the app with minimal effort. Going to "Your Orders," selecting the item, and tapping "Return or Replace Items" starts the process. The user selects a reason for return, chooses whether they want a refund or replacement, and Amazon provides a prepaid return label or arranges a pickup. For Prime members, returns are typically free and often refunded immediately upon pickup.
+
+Amazon also focuses on encouraging repeat purchases. Based on the user's purchase history, the app sends personalized recommendations: "You bought wireless headphones last month. Here are accessories you might need" or "Buy it Again" reminders for consumable products like phone chargers or household items. The app may also send time-sensitive offers: "30% off on electronics this weekend only" or "Exclusive Prime Day deals coming soon."
+
+**Business Objective at This Stage:** Ensure a smooth post-purchase experience with proactive communication, easy returns, and personalized engagement to encourage repeat purchases and maintain customer loyalty. Key metrics include repeat purchase rate, Net Promoter Score (NPS), and customer satisfaction.
+
+***
+
+**STAGE 5: ADVOCACY**
+
+The final stage of the user journey is advocacy, where a satisfied customer becomes a promoter of Amazon and the products they purchased. This stage is critical for organic growth through word-of-mouth.
+
+When the user is happy with their purchase, they are encouraged to share their experience by writing a product review. The app prompts them to rate the product (1–5 stars) and write a detailed review describing their experience, pros and cons, and whether they would recommend it. Users can also upload photos or videos of the product in use. Amazon values authentic customer feedback and sometimes incentivizes top reviewers through the "Vine Voice" program, where trusted reviewers receive free products in exchange for honest reviews.
+
+The user may also share their purchase on social media directly from the app. For example, after buying a new smartphone, they might post a photo on Instagram or Facebook with a link to the product, saying "Just got this amazing phone from Amazon!" This social sharing acts as free advertising and influences the user's network.
+
+Amazon also has a formal referral program. The user can invite friends to join Amazon by sharing a unique referral link via WhatsApp, email, or social media. When the friend signs up and makes their first purchase, both the referrer and the referred friend receive a credit (e.g., ₹100 or $5) added to their Amazon wallet. This gamifies advocacy and encourages users to actively promote Amazon.
+
+Additionally, satisfied Prime members often renew their subscriptions and become advocates for the Prime membership itself, recommending it to friends and family for the free fast delivery, Prime Video streaming, and exclusive deals.
+
+In some cases, customers may become "super advocates" by answering questions from other potential buyers in the product Q&A section, participating in Amazon community forums, or becoming brand ambassadors for specific product categories.
+
+**Business Objective at This Stage:** Transform satisfied customers into active brand promoters who generate word-of-mouth referrals, write authentic reviews, and invite new users. Key metrics include review volume, referral conversions, and social media mentions.
+
+***
+
+**COMPLETE USER JOURNEY SUMMARY**
+
+**Stage 1: Awareness**
+- User discovers Amazon app through ads, word-of-mouth, or app store search
+- Downloads app and creates/signs in to account
+- Business focus: Capture interest with compelling value propositions
+
+**Stage 2: Consideration**
+- User searches for products using search bar or category browsing
+- Applies filters to narrow down options
+- Views product detail pages, reads reviews, compares alternatives
+- AI-powered recommendations help users discover relevant products
+- Business focus: Provide transparent, detailed product information to build confidence
+
+**Stage 3: Purchase**
+- User adds items to cart or uses "Buy Now" for instant checkout
+- Selects shipping address and delivery speed
+- Chooses payment method and applies promo codes
+- Reviews order summary and confirms purchase with one-click or biometric authentication
+- Receives order confirmation with tracking number
+- Business focus: Frictionless, transparent checkout to maximize conversion
+
+**Stage 4: Retention**
+- User tracks order in real time with push notifications at key milestones
+- Package is delivered with photo proof
+- User receives follow-up survey and review request
+- Easy return process if unsatisfied
+- Personalized recommendations encourage repeat purchases
+- Business focus: Smooth post-purchase experience to drive loyalty and repeat business
+
+**Stage 5: Advocacy**
+- User writes product review with rating and photos
+- Shares purchase on social media
+- Refers friends using referral program for rewards
+- Becomes active community member answering questions
+- Business focus: Turn satisfied customers into brand promoters for organic growth
+
+***
+
+This five-stage user journey (Awareness → Consideration → Purchase → Retention → Advocacy) is designed around Amazon's core philosophy of customer-centricity. Every touchpoint is optimized to reduce friction, provide value, and build long-term customer loyalty. The seamless integration of personalization, fast delivery, transparent pricing, and proactive communication has made Amazon the world's largest e-commerce platform, with the mobile app serving as the primary shopping channel for hundreds of millions of users globally.
