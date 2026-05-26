@@ -1,0 +1,64 @@
+Story 1 – Product Search and Filter
+
+Issue type: Story
+Epic link: ECOM-15 Online Shopping Experience
+Summary: As a registered Lululemon customer, I want to search and filter women’s leggings by size, color, and price so that I can quickly find products that match my preferences.
+
+Description:
+A logged‑in customer should be able to search for leggings from the home page and PLP (product listing page). The user must be able to apply multiple filters (size, color, price range, length, collection) and see the product list update instantly without a full page refresh. Search and filters should work together, and the applied filters must be clearly visible and removable individually. The system should show the number of matching products and handle empty results gracefully with a helpful message and recommendations.
+
+User story (template format):
+As a registered customer
+I want to search and filter women’s leggings by key attributes
+So that I can quickly find relevant products without scrolling through all items.
+
+Acceptance Criteria:
+
+Search functionality
+
+Given I am on the home page or PLP, when I enter a keyword like “Align leggings” in the search bar and hit enter, then I should be redirected to a search results page showing products whose name, description, or tags match “Align leggings”.
+
+The search query should be visible in the search field on the results page.
+
+Filter panel
+
+Filters available on women’s leggings PLP: Size (0–20), Color (e.g., Black, Navy, Copper Brown), Price range (slider or ranges), Length (Full length, 7/8, Crop), and Collection (Align, Wunder Train, Wunder Under, Base Pace).
+
+Filters should be collapsible sections on desktop and a slide‑in panel on mobile.
+
+Filter behavior
+
+When I select one or more filter values, the product list must update within 2 seconds without a full page reload.
+
+Multiple filters can be combined (e.g., Size 6 + Color Black + Price 5,000–8,000 INR + Collection Align).
+
+The number of products found should be displayed, e.g., “24 items”.
+
+Filter chips and clear options
+
+Applied filters must appear as chips/tags above the product grid.
+
+Clicking the “x” on any filter chip should remove that filter and refresh results.
+
+A “Clear all” option should remove all filters and reset the list.
+
+Empty state
+
+If no products match the selected filters, the page should display a friendly message like “No products match these filters. Try removing some filters.” and show at least 4 recommended items.
+
+Persistence
+
+If the user navigates to a product details page and clicks “Back” in the browser, the previously applied filters and scroll position on PLP should be preserved.
+
+Non‑functional
+
+Initial PLP load with default filters should be under 3 seconds on a typical 4G connection for primary markets.
+
+Search and filter interactions should be accessible (keyboard navigation and basic screen reader labels).
+
+Story points: 5
+Priority: High
+Assignee: (to be set)
+Reporter: Product Owner
+Labels: web, search, filters, lululemon
+Sprint: Sprint 12 – Web Enhancements
